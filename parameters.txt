@@ -1,45 +1,45 @@
 (USER PREFERENCE FISHR)
 
--MAKEBINARIES: NO	#YES/NO. 'YES' will make binaries. 'NO' will run the program
+-MAKEBINARIES: YES	#YES/NO. 'YES' will make binaries. 'NO' will run the program
 
 (FILE LOCATIONS)
 
 -binary-output-directory: /home/piyush/eggbinary/ #Location of binaries.
 
--pedfile: /home/piyush/germline_ibg4/germline_ibg3/germline_ibg2/germline_ibg/Default_PED_MAP/Beagle.Phased.Group2.1k.ped #Must be in PHASED ped file format; see documentation
+-pedfile: /home/piyush/germline_ibg4/germline_ibg3/germline_ibg2/germline_ibg/Default_PED_MAP/Beagle.Phased.Group2.1k.ped #The .ped file.
 
--mapfile: /home/piyush/germline_ibg4/germline_ibg3/germline_ibg2/germline_ibg/Default_PED_MAP/Beagle.Phased.Group2.1k.map #regular map file
+-mapfile: /home/piyush/germline_ibg4/germline_ibg3/germline_ibg2/germline_ibg/Default_PED_MAP/Beagle.Phased.Group2.1k.map #The .map file.
 
--germline output directory: /home/piyush/germline_ibg4/germline_ibg3/germline_ibg2/germline_ibg/gl/ #MUST BE A DIRECTORY e.g. /lustre/mmkeller/temp/
+-germline output directory: /home/piyush/germline_ibg4/germline_ibg3/germline_ibg2/germline_ibg/gl/ #Germline output directory path.
 
--fishr output directory: /home/piyush/germline_ibg4/germline_ibg3/germline_ibg2/germline_ibg/ef/	#/work/KellerLab/mmkeller/fish/fishr.outfile.prefix
+-fishr output directory: /home/piyush/germline_ibg4/germline_ibg3/germline_ibg2/germline_ibg/ef/	#Fishr output directory path.
 
--log.file: /home/piyush/germline_ibg4/germline_ibg3/germline_ibg2/germline_ibg/logs/ #/work/KellerLab/mmkeller/fish/fishr.outfile.prefix
+-log.file: /home/piyush/germline_ibg4/germline_ibg3/germline_ibg2/germline_ibg/logs/ #Log file output path.
 
--germline.outfile.prefix: apple # The name of the germline file output
+-germline.outfile.prefix: GL_OUT    #Germline output filename.
 
--fishr.outfile.prefix: orange# The name of the Fishr output file
+-fishr.outfile.prefix: FISHR_OUT    #Fishr output file name.
 
 
 
 (GERMLINE)
 
--bin_out
+-bin_out	#Output bmatch bmid bsid file.
 
--bits: 20 
+-bits: 20 #Size of each slice (in markers) used for exact matching seeds.
 
--err_hom: 0 
+-err_hom: 0 #Maximum number of mismatching homozygous markers for a slice to still be considered part of a match.
 
--err_het: 0 
+-err_het: 0 #Maximum number of mismatching heterozygous markers for a slice to still be considered part of a match.
 
--min_m: 3
+-min_m: 3	#Minimum length for match to be used for imputation (in cM or MB).
 
--homoz
+-homoz 	#Allow self matches (runs of homozygosity)
 
 #METHOD1:(MUST ENABLE EXACTLY ONE OF THE OPTION BELOW)
-#a: -w_extend
-b: -w_extend -h_extend
-#c: -w_extend -h_extend -haploid
+#a: -w_extend	#Extend the match beyond the slice end to the first mismatching marker.
+b: -w_extend -h_extend	#Extends from exact seeds using haplotypes rather than genotypes; useful when data is well-phased. 
+#c: -w_extend -h_extend -haploid	#Treat each input individual as two distinct and separate haplotypes.
 
 
 
@@ -49,9 +49,9 @@ b: -w_extend -h_extend
 (OPTIONAL GERMLINE PARAMETER)
 #Use # to comment out any flags.
 
-#-from_snp:
-#-to_snp:
-#-homoz-only
+#-from_snp:	#Indicate the ID of the first SNP to start processing from.
+#-to_snp:	#Indicate the ID of the last SNP to end processing with.
+#-homoz-only	#Analyze and report only auto/homo-zygous segments, no IBD reported but significantly faster analysis.
 
 
 
@@ -61,19 +61,18 @@ b: -w_extend -h_extend
 
 -min_snp: 64	#-reduced: 64 3 #replaced my -min_snp and -min_cm
 
--min_cm: 3
+-min_cm: 3	#
 
--window: 50 
+-window: 50 #
 
--gap: 100 
+-gap: 100 #
 
--output.type: finalOutput 
+-output.type: finalOutput #
 
 -count.gap.errors: TRUE 
 
--extendSNP: 40 
+-extendSNP: 40 #
 
-#-low-ram:no
 
 #METHOD1: (MUST ENABLE EXACTLY ONE OF THE OPTIONS BELOW)
 a:-emp-pie-threshold:0.015 

@@ -1,0 +1,99 @@
+(USER PREFERENCE FISHR)
+
+-MAKEBINARIES: YES	#YES/NO. 'YES' will make binaries. 'NO' will run the program
+
+(FILE LOCATIONS)
+
+-binary-output-directory: /home/piyush/eggbinary/ #Location of binaries.
+
+-pedfile: /home/piyush/germline_ibg4/germline_ibg3/germline_ibg2/germline_ibg/Default_PED_MAP/Beagle.Phased.Group2.1k.ped #Must be in PHASED ped file format; see documentation
+
+-mapfile: /home/piyush/germline_ibg4/germline_ibg3/germline_ibg2/germline_ibg/Default_PED_MAP/Beagle.Phased.Group2.1k.map #regular map file
+
+-germline output directory: /home/piyush/germline_ibg4/germline_ibg3/germline_ibg2/germline_ibg/gl/ #Germline output directory path.
+
+-fishr output directory: /home/piyush/germline_ibg4/germline_ibg3/germline_ibg2/germline_ibg/ef/	#/work/KellerLab/mmkeller/fish/fishr.outfile.prefix
+
+-log.file: /home/piyush/germline_ibg4/germline_ibg3/germline_ibg2/germline_ibg/logs/ #/work/KellerLab/mmkeller/fish/fishr.outfile.prefix
+
+-germline.outfile.prefix: apple # The name of the germline file output
+
+-fishr.outfile.prefix: orange# The name of the Fishr output file
+
+
+
+(GERMLINE)
+
+-bin_out
+
+-bits: 20 
+
+-err_hom: 0 
+
+-err_het: 0 
+
+-min_m: 3
+
+-homoz
+
+#METHOD1:(MUST ENABLE EXACTLY ONE OF THE OPTION BELOW)
+#a: -w_extend
+b: -w_extend -h_extend
+#c: -w_extend -h_extend -haploid
+
+
+
+
+
+
+(OPTIONAL GERMLINE PARAMETER)
+#Use # to comment out any flags.
+
+#-from_snp:
+#-to_snp:
+#-homoz-only
+
+
+
+
+(ERRORFINDER)
+
+
+-min_snp: 64	#-reduced: 64 3 #replaced my -min_snp and -min_cm
+
+-min_cm: 3
+
+-window: 50 
+
+-gap: 100 
+
+-output.type: finalOutput 
+
+-count.gap.errors: TRUE 
+
+-extendSNP: 40 
+
+#-low-ram:no
+
+#METHOD1: (MUST ENABLE EXACTLY ONE OF THE OPTIONS BELOW)
+a:-emp-pie-threshold:0.015 
+#b:-pct-err-threshold:0.8
+
+
+#METHOD2: (MUST ENABLE EXACTLY ONE OF THE OPTIONS BELOW)
+
+#c:-empirical-ma-threshold:0.04 
+d:-ma-threshold:0.2
+
+
+(OPTIONAL ERRORFINDER PARAMETER)
+
+#-trueCM:6
+
+#-trueSNP:500
+
+#-PIE.dist.length 3
+
+
+
+
