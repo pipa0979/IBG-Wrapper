@@ -13,7 +13,7 @@ ErrorFinderManager::ErrorFinderManager():WINDOW(50),
                     MIN_CM(0.4), MA_ERR_THRESHOLD_START(0.08),
                     MA_ERR_THRESHOLD_END(0.08),PCT_ERR_THRESHOLD( 0.90 ),
                     HO_THRESHOLD( 0.98 ), TRUECM( 6 ),PIELENGTH( 3 ),
-                    ISMOL( false), COUNTGAPERR( false ),MA_THRESHOLD(0.8),EMPIRICAL_MA_RESULT(-1.0), EMPIRICAL_PIE_RESULT(-1.0),EXTENDSNP(50)
+                    ISMOL( false), COUNTGAPERR( false ),MA_THRESHOLD(0.8),EMPIRICAL_MA_RESULT(-1.0), EMPIRICAL_PIE_RESULT(-1.0),EXTENDSNP(0)
 {
 }
 
