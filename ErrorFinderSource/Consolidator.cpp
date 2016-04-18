@@ -330,7 +330,7 @@ if (extendSnp != 0)
                                      	//cout<<"New value of temp2= "<<temp2<<endl;
                                      }
 
-
+}
         /*till here*/
                                      /*cout<<"temp1 start after= "<<temp1<<endl;
                                      cout<<"temp2 end after= "<<temp2<<endl;*/
