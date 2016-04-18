@@ -305,7 +305,8 @@ void Consolidator::performTrim(ErrorCalculator& e_obj,int window,
         //cout<<"temp2 end begin= "<<temp2<<endl;
 
 
-
+if (extendSnp != 0)
+{
         /*<piyush1>*/
         if(temp1-extendSnp <0)
                                      {
@@ -339,7 +340,7 @@ void Consolidator::performTrim(ErrorCalculator& e_obj,int window,
                                      //cout<<"perform trim temp2= "<<temp2<<endl;
 
 
-
+}
 
         int pers1 = i, pers2 = j;
         if( option.compare( "ErrorRandom1" ) == 0 || option.compare( "ErrorRandom2" ) == 0 || option.compare( "ErrorRandom3" ) == 0 )
