@@ -305,7 +305,8 @@ void Consolidator::performTrim(ErrorCalculator& e_obj,int window,
         //cout<<"temp2 end begin= "<<temp2<<endl;
 
 
-
+if (extendSnp != 0)
+{
         /*<piyush1>*/
         if(temp1-extendSnp <0)
                                      {
@@ -329,7 +330,7 @@ void Consolidator::performTrim(ErrorCalculator& e_obj,int window,
                                      	//cout<<"New value of temp2= "<<temp2<<endl;
                                      }
 
-
+}
         /*till here*/
                                      /*cout<<"temp1 start after= "<<temp1<<endl;
                                      cout<<"temp2 end after= "<<temp2<<endl;*/
